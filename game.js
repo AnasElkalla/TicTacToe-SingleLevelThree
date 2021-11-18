@@ -216,7 +216,7 @@ if (ended === false) {
       }
       const playerX = function () {
         for (let x = 0; x < 9; x++) {
-          if (active === false) {
+          if (active === false && ended===false) {
             for (let a = 0; a < 3; a++) {
               const winningGame = winning[a];
               let first = mark[winningGame[0]];
@@ -274,7 +274,7 @@ if (ended === false) {
             }
           }
           let roll = Math.floor(Math.random() * 9);
-          if (mark[roll] === "" && active === false) {
+          if (mark[roll] === "" && active === false && ended===false) {
             table[roll].textContent = "O";
             results.push(table[roll]);
             mark[roll] = "O";
@@ -330,7 +330,7 @@ if (ended === false) {
 
         const playerO = function () {
           for (let x = 0; x < 9; x++) {
-            if (active === false) {
+            if (active === false && ended===false) {
               for (let a = 0; a < 3; a++) {
                 const winningGame = winning[a];
                 let first = mark[winningGame[0]];
@@ -372,7 +372,7 @@ if (ended === false) {
                   second === third &&
                   second === "O" &&
                   mark[winningGame[0]] === "" &&
-                  active === false
+                  active === false && ended===false
                 ) {
                   console.log(winningGame[0]);
                   table[winningGame[0]].textContent = "X";
